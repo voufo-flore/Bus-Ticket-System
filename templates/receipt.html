@@ -1,0 +1,282 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+  
+
+  
+    <style>
+      .payment-ticket-container, #ticketCont {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 50px;
+      }
+      .payment-ticket {
+        overflow: hidden;
+        width: 1000px;
+        height: 350px;
+        border-radius: 20px;
+
+        position: relative;
+        .head {
+          display: flex;
+          justify-content: space-between;
+          text-align: center;
+          width: 97%;
+          height: 20px;
+          background-color: red;
+          align-items: center;
+          padding: 20px;
+          color: white;
+          font-weight: bold;
+        }
+        .head.lower {
+          width: 97%;
+          height: 10px;
+        }
+        img {
+          height: 50px;
+          width: 80px;
+        }
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        .left {
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+        }
+        .right {
+          width: 30%;
+          display: block;
+          border-left: 1px dotted;
+          img {
+            margin-top: 50px;
+          }
+        }
+      }
+      p {
+        opacity: 0.5;
+      }
+      .separator {
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+      }
+      .separator.upper {
+        left: 685px;
+        top: -10px;
+      }
+      .separator.lower {
+        left: 685px;
+        bottom: -10px;
+      }
+    </style>
+
+    
+    <main style="margin-top: 1px">
+      <div class="main" style="width: 100%">
+        <div style="font-size: 30px; font-weight: bold">
+          <p
+            style="
+              font-size: 50px;
+              font-weight: none;
+              opacity: 0.8;
+              width: 100%;
+              height: 150px;
+              background-color: black;
+              color: white;
+              bottom: 1px;
+              place-content: center;
+              background-image: url('{% static "image/back.jpg" %}');
+              background-size: cover;
+            "
+          >
+            Successful Payment
+          </p>
+          Have A Great Journey!!!
+          
+        </div>
+        <div class="payment-ticket-container" id="ticketCont">
+          <div class="payment-ticket">
+              <div class="separator upper"></div>
+              <div class="separator lower"></div>
+              <div class="head">
+                <div style="align-items: center; display: flex; width: 70%">
+                  <img
+                    style="margin-right: 10px"
+                    src="{% static 'image/bus3.png' %}"
+                    alt=""
+                    srcset=""
+                  />
+                  Avenir Voyages
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    width: 30.5%;
+                    border-left: 1px dotted;
+                  "
+                >
+                  Bus No - 2356
+                </div>
+              </div>
+              <div class="content">
+                <div class="left">
+                  <div style="text-align: left; width: 70%">
+                    Bill No: 454
+                    <hr />
+                    <p>Name of Passenger: Voufo Flore</p>
+                    <p>Seat No: 34</p>
+                    <p>Pickup Station: Olembe</p>
+                    <p>Yaounde - Douala</p>
+                  </div>
+                  <div style="text-align: left; width: 30%">
+                    Date: 2025-03-13
+                    <hr />
+                    <p>Total Price: 6000XAF</p>
+                    <p
+                      style="
+                        height: 25px;
+                        width: 100px;
+                        border-radius: 20px;
+                        border: 1px solid rgb(2, 156, 2);
+                        color: rgb(2, 156, 2);
+                        place-content: center;
+                        text-align: center;
+                      "
+                    >
+                      Bill Paid
+                    </p>
+                    <p>Departure Time: 8:00 AM</p>
+                    <p>Arrival Time: 8:00 AM</p>
+                  </div>
+                </div>
+                <div class="right">
+                  <div>Bus Ticket</div>
+                  <img
+                    style="align-self: center; height: 150px; width: 290px"
+                    src="{% static 'image/bus7.png' %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="head lower">
+                <div style="align-items: center; display: flex; width: 70%">
+                  +237654897023
+                </div>
+                <div style="text-align: center">busagency137@gmail.com</div>
+              </div>
+            </div>
+           
+        </div>
+        <button id="download-ticket">Download</button>
+        
+      </div>
+    </main>
+
+    
+  <script>
+    const dowonloadTicket=document.getElementById('download-ticket')
+    const ticketCont=document.getElementById('ticketCont')
+
+    dowonloadTicket.addEventListener('click', ()=>{
+        const ticketHtml=` 
+          <div class="payment-ticket">
+              <div class="separator upper"></div>
+              <div class="separator lower"></div>
+              <div class="head">
+                <div style="align-items: center; display: flex; width: 70%">
+                  <img
+                    style="margin-right: 10px"
+                    src="bus3.png"
+                    alt=""
+                    srcset=""
+                  />
+                  Avenir Voyages
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    width: 30.5%;
+                    border-left: 1px dotted;
+                  "
+                >
+                  Bus No - 2356
+                </div>
+              </div>
+              <div class="content">
+                <div class="left">
+                  <div style="text-align: left; width: 70%">
+                    Bill No: 454
+                    <hr />
+                    <p>Name of Passenger: Ibrahim Fonyuy</p>
+                    <p>Seat No: 34</p>
+                    <p>Pickup Station: Olembe</p>
+                    <p>Yaounde - Douala</p>
+                  </div>
+                  <div style="text-align: left; width: 30%">
+                    Date: 2024-11-02
+                    <hr />
+                    <p>Total Price: 6000XAF</p>
+                    <p
+                      style="
+                        height: 25px;
+                        width: 100px;
+                        border-radius: 20px;
+                        border: 1px solid rgb(2, 156, 2);
+                        color: rgb(2, 156, 2);
+                        place-content: center;
+                        text-align: center;
+                      "
+                    >
+                      Bill Paid
+                    </p>
+                    <p>Departure Time: 8:00 AM</p>
+                    <p>Arrival Time: 8:00 AM</p>
+                  </div>
+                </div>
+                <div class="right">
+                  <div>Bus Ticket</div>
+                  <img
+                    style="align-self: center; height: 150px; width: 290px"
+                    src="bus7.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="head lower">
+                <div style="align-items: center; display: flex; width: 70%">
+                  +237677020718
+                </div>
+                <div style="text-align: center">busagency137@gmail.com</div>
+              </div>
+            </div>
+          
+         `;
+
+        const ticketElement= document.createElement('div');
+        ticketElement.innerHTML=ticketHtml;
+
+        const blob= new Blob([ticketHtml], {type:'text/pdf'})
+        const url=URL.createObjectURL(blob);
+
+        const a=document.createElement('a')
+        a.href=url;
+        a.download='receipt.html';
+        a.click();
+
+        URL.revokeObjectURL(url);
+
+    })
+  </script>
+
+  {% endblock content %}

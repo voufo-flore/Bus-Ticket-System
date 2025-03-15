@@ -1,0 +1,294 @@
+:root {
+  --background: white;
+  --color: block;
+}
+
+body {
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: var(--background);
+  height: fit-content;
+  display: block;
+  overflow-x: hidden;
+}
+header {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  background-color: var(--background);
+  padding: 20px;
+  box-shadow: 0px 0px 5px black;
+  top: 0px;
+}
+.active{
+  color: red;
+}
+
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: var(--color);
+  opacity: 0.8;
+}
+header a.active{
+  color: red;
+}
+header a:hover{
+    color: red;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 50px;
+}
+ul {
+  margin-right: 20px;
+}
+.logo a{
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  color: red;
+  margin-left: 30px;
+  text-decoration: none;
+}
+@keyframes logo {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.signup {
+  align-items: center;
+  height: 30px;
+  width: 100px;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  place-content: center;
+  text-align: center;
+  
+  border: 1px solid red;
+}
+.signup:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+main {
+  margin-top: 100px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.main {
+  display: block;
+  width: 90%;
+}
+.search-bar form{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border: 1px solid;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-self: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px black;
+  border: none;
+
+  
+ 
+  input{
+    height: 30px;
+    width: 300px;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 2px black;
+   
+  }
+  button{
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    
+  }
+  button:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+}
+
+.hero{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    img{
+        width: 100%;
+       
+        
+    }
+    .hero-text{
+        text-align: center;
+        width: 40%;
+        font-size: 60px;
+        align-items: center;
+        place-content: center;
+        button{
+            width: 100px;
+            height: 50px;
+            border: none;
+            background-color: red;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            
+          }
+          button:hover{
+            background-color: white;
+            color: red;
+            border: 1px solid red;
+        }
+        
+    }
+    
+}
+.service{
+    display: block;
+    justify-content: center;
+}
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+
+    
+}
+.services-item{
+    width: 350px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin: 15px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    p{
+        opacity: 0.6;
+    }
+}
+.services-item:hover{
+    background-color: transparent;
+    box-shadow: 0px 0px 5px red;
+    color: red;
+    
+    transition: 0.2s ease-in-out;
+}
+
+.routes{
+    width: 320px;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 3px black;
+    margin: 10px;
+    display: block;
+    text-align: center;
+    place-content: center;
+   padding: 20px;
+    display: block;
+    .head, .distance{
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        position: relative;
+        margin: 10px;
+        
+    }
+    .distance.price{
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .distance .time{
+        height: 20px;
+        width: 70px;
+        border-radius: 10px;
+        border: solid 1px;
+        position: absolute;
+        left: 125px;
+        z-index: 100;
+       background-color: whitesmoke;
+    }
+    .distance .reserve{
+        height: 35px;
+        width:120px;
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+        place-content: center;
+        cursor: pointer;
+        align-items: center;
+        border: 1px solid red;
+    }
+    .reserve:hover{
+        background-color: white;
+        
+        color:red;
+    }
+}
+
+footer {
+    z-index: 100;
+    background-color: black;
+    padding: 60px;
+    box-shadow: 0px 0px 5px black;
+    color: white;
+    height: fit-content;
+
+  section{
+  
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ 
+  
+  p, a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin: 5px;
+    opacity: 0.5;
+  }
+}
+
+p{
+    opacity: 0.6;
+    margin-top: 30px;
+}
+
+  
+
+}
+
+
+

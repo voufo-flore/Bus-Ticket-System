@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bus Ticket System</title>
+
+    <style>
+        body{
+            display: flex;
+        }
+        .bus{
+            display:block;
+            text-align: center;
+            height: 100px;
+            width: 200px;
+            box-shadow: 0px 0px 10px black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    {{station.name}}
+    availabe bus
+    {{total}}
+    book ticket for bus {{bus.number}}
+
+    {% for bus in buses  %}
+    <div class="bus">
+      <a href=" {% url 'book_ticket' bus.id%}">book this</a> {{bus.sits}} available
+    </div>
+    
+    {% endfor %}
+</body>
+</html>

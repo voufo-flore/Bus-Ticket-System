@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}" />
+    <title>Bus Ticket - 
+    {% if request.path == '/bus_ticket/home/' %}
+        Home
+        {% elif request.path == '/bus_ticket/tickets/' %}
+        Tickets
+    {% endif %}
+        </title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    {% block content %}
+        
+    {% endblock content %}
+    <footer>
+        <section>
+          <div class="icon">
+            <h1 style="color: red; font-size: 50px">Bus Ticket</h1>
+            <p>
+              Bus is all about booking tickets online making it more fast in less
+              <br />
+              time consuming for all passangers
+            </p>
+          </div>
+          <div class="quick-links">
+            <h2>Quick Links</h2>
+            <a href="">About Us</a>
+            <a href="">My Account</a>
+            <a href="">Reserve Your Ticket</a>
+            <a href="">Create Your Acount</a>
+          </div>
+          <div class="quick-links">
+            <h2>Top Reserved Routes</h2>
+            <p>Yaounde - Douala</p>
+            <p>Yaounde - Bamenda</p>
+            <p>Bamenda - Buea</p>
+            <p>Douala - Limbe</p>
+          </div>
+          <div class="quick-links">
+            <h2>Support Links</h2>
+            <a href="">Privacy Policy</a>
+            <a href="">Terms & Condition</a>
+            <a href="">Help & Support Center</a>
+            <a href="">FaQs</a>
+          </div>
+        </section>
+        <hr style="color: white;">
+        <p>Copyright &copy; 2025, All rights reserved</p>
+      </footer>
+    
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> SignIn </title>
+  </head>
+  <body>
+    <style>
+      a {
+        text-decoration: none;
+        color: red;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+
+        background-color: white;
+        height: 100vh;
+      }
+      form {
+        height: fit-content;
+        width: 400px;
+        box-shadow: 0px 0px 5px black;
+        border-radius: 20px;
+        border: none;
+        text-align: center;
+        padding: 20px;
+        display: block;
+        place-content: center;
+
+        .input {
+          position: relative;
+        }
+        .input input {
+          position: relative;
+          height: 20px;
+          width: 350px;
+          margin: 20px;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0px 0px 2px black;
+        }
+
+        .input input:focus + label {
+          top: -7px;
+        }
+
+        .input label {
+          position: absolute;
+          left: 30px;
+          top: 30px;
+          opacity: 0.5;
+          transition: top ease-in-out 0.5s;
+        }
+
+        button {
+          width: 150px;
+          height: 40px;
+          border: none;
+          background-color: red;
+          border-radius: 5px;
+          color: white;
+          font-size: 15px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: white;
+          color: red;
+          border: 1px solid red;
+        }
+        .head {
+          display: flex;
+          justify-content: space-between;
+          h2 {
+            width: 95%;
+            text-align: left;
+            margin-left: 5px;
+          }
+          h3 {
+            width: 5%;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+          }
+        }
+      }
+    </style>
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <div class="head">
+        <h3
+          style="text-align: left"
+          title="back to prevois page"
+          onclick="window.history.back()"
+        >
+          &#8592;
+        </h3>
+        <h2>SignUp to <span style="color: red"> Bus Ticket </span></h2>
+      </div>
+
+      {% if messages %}
+
+      <div id="messages" style="color: red">
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+      </div>
+      <script>
+        setTimeout(() => {
+          document.getElementById("messages").style.display = "none";
+        }, 3000);
+      </script>
+
+      {% endif %}
+      <div class="input">
+        <input type="text" name="username" id="username" required />
+        <label for="username" id="label ">Username</label>
+      </div>
+      <div class="input">
+        <input type="password" name="password1" id="password1" required />
+        <label for="password1" id="label">Password</label>
+      </div>
+      <div class="input">
+        <input type="password" name="password2" id="password2" required />
+        <label for="password2" id="label">Comfirm Password</label>
+      </div>
+      <div class="input">
+        <input type="email" name="email" id="email" required />
+        <label for="email" id="label">Email</label>
+      </div>
+
+      <div
+        class="check"
+        style="margin: 10px; text-align: left; padding-left: 10px"
+      >
+        <input type="checkbox" name="check" id="" required />
+        <label for="check" id="label">Agree to our terms and conditions</label>
+      </div>
+
+      <button type="submit">Create</button>
+      <p>Having an account? <a href="{% url 'login' %}"> Sign In</a></p>
+    </form>
+  </body>
+</html>

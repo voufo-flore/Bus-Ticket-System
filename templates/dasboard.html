@@ -1,0 +1,118 @@
+{% extends 'main.html' %} 
+
+{% load static %}
+
+{% block content %}
+
+<main>
+  <div class="main">
+    <div style="font-size: 50px">
+      <p style="font-size: 15px; font-weight: none; opacity: 0.8">
+        Get your bus ticket
+      </p>
+      Find Best Bus For You
+
+      
+    </div>
+    
+    {% if messages %}
+      
+    
+      <div id="messages" style="color: rgb(8, 216, 8);">
+    {% for message in messages  %}
+    <p>{{message}}</p>
+    {% endfor %}
+    </div>
+    <script>
+      
+      setTimeout(()=>{
+      document.getElementById('messages').style.display='none'
+    }, 3000)
+    </script>
+  
+
+  {% endif %}
+
+    <div class="search-bar">
+      <form action="" method="get">
+        <input type="text" name="" id="" placeholder="from...." />
+        <input type="text" name="" id="" placeholder="to.." />
+        <input type="date" name="" id="" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="hero">
+      <img src="{% static 'image/bus3.png' %}" alt="bus" srcset="" />
+      <!-- <div class="hero-text">
+            Reserve Your <br />Bus <span style="color: red">Tickets </span> now
+
+            <div class="hero-btn">
+              <button>Reserve sit now</button>
+            </div>
+          </div> -->
+    </div>
+
+    <div class="service">
+      <div style="font-size: 30px">
+        <b>Our <span style="color: red">Services</span></b>
+      </div>
+      <div class="services">
+        <div class="services-item">
+          <h2>Secure Payment</h2>
+          <p>
+            Fast and secure intergrated payment methodologies for relaible and
+            fast payment of tickets
+          </p>
+        </div>
+        <div class="services-item">
+          <h2>Refund Policy</h2>
+          <p>
+            Offer options for the user to purchase refundable ticktes with clear
+            items
+          </p>
+        </div>
+        <div class="services-item">
+          <h2>24/7 Support</h2>
+          <p>Get assistant anytime through chat, email or phone</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service" style="margin-top: 50px">
+      <div style="font-size: 30px">
+        <b>Top Search <span style="color: red">Routes</span></b>
+      </div>
+      <div class="services" style="margin-bottom: 30px">
+        {% for bus in buses  %}
+          
+        
+        <div class="routes">
+          <div class="head">
+            <div style="opacity: 0.5">From</div>
+            <div style="opacity: 0.5">To</div>
+          </div>
+          <div class="distance">
+            <div style="font-size: 20px">{{bus.departure_city}}</div>
+            <div style="opacity: 0.5">
+              ...........................................
+            </div>
+            <div class="time"><span style="opacity: 0.5">{{bus.time}} Hrs</span></div>
+            <div style="font-size: 20px">{{bus.arrival_city}}</div>
+          </div>
+          <div class="benefits" style="margin-top: 20px">
+            <p style="opacity: 0.5">internet - snacks - TV - mobile charging</p>
+          </div>
+          <div class="distance price">
+            <div style="font-size: 20px">{{bus.amount}} XAF</div>
+            <a style="text-decoration: none;" href="{% url 'book_ticket' bus.id %}"><div class="reserve">Reserve Seat</div></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock content %}
